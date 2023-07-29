@@ -18,7 +18,7 @@ async function submitOrder() {
   };
 
   try {
-    const response = await axios.post('http://localhost:4000/order', order);
+    const response = await axios.post('http://localhost:4000/get/order', order);
     console.log(response.data);
     fetchOrders();
     clearFormFields();
@@ -35,7 +35,7 @@ function clearFormFields() {
 
 async function deleteOrder(orderId) {
   try {
-    const response = await axios.delete(`http://localhost:4000/order/${orderId}`);
+    const response = await axios.delete(`http://localhost:4000/get/order/${orderId}`);
     console.log(response.data);
     removeOrderFromUI(orderId);
   } catch (error) {
@@ -52,7 +52,7 @@ function removeOrderFromUI(orderId) {
 
 async function fetchOrders() {
   try {
-    const response = await axios.get('http://localhost:4000/orders');
+    const response = await axios.get('http://localhost:4000/get/orders');
     const data = response.data;
 
     // Group orders by table number
@@ -110,8 +110,3 @@ async function fetchOrders() {
 
 // Fetch initial orders on page load
 fetchOrders();
-
-
-
-
-
