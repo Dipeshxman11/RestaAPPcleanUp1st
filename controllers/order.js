@@ -1,5 +1,5 @@
 const path = require("path");
-const Order = require('../models/orderModel');
+const Order = require('../models/order');
 
 
 exports.getMainPage = (_req, res, next) => {

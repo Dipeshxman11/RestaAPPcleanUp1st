@@ -8,7 +8,7 @@ const sequelize = require('./utils/database');
 
 // app.use(cors());
 
-const orderRouter = require("./routes/orderRouter");
+const orderRouter = require("./routes/order");
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
